@@ -1,3 +1,40 @@
 <h1>
+  <button md-mini-fab (click)="sidenav.toggle()">
+    <md-icon>menu</md-icon>
+  </button>
   {{title}}
 </h1>
+<md-sidenav-container class="first-container">
+  <md-sidenav
+      #sidenav
+      class="first-sidenav"
+      md-component-id="left"
+      md-is-locked-open="$mdMedia('gt-md')"
+      md-whiteframe="4"
+      opened="true">
+    <md-toolbar class="md-theme-indigo">
+      <h1 class="md-toolbar-tools">Console</h1>
+    </md-toolbar>
+    <div md-content layout-padding ng-controller="LeftCtrl">
+      <button md-button routerLink="/home" routerLinkActive="active" class="md-primary" hide-gt-md>
+          Home
+      </button><br/>
+      <button md-button routerLink="/dashboard" routerLinkActive="active" class="md-primary" hide-gt-md (click)="sidenav.toggle()">
+          Dashboard
+      </button><br/>
+      <button md-button routerLink="/animations" routerLinkActive="active" class="md-primary" hide-gt-md (click)="sidenav.toggle()">
+          Animations
+      </button><br/>
+      <button md-button routerLink="/input" routerLinkActive="active" class="md-primary" hide-gt-md (click)="sidenav.toggle()">
+          Input
+      </button><br/>
+      <button md-button routerLink="/about" routerLinkActive="active" class="md-primary" hide-gt-md (click)="sidenav.toggle()">
+          About
+      </button>
+    </div>
+  </md-sidenav>
+
+  <div class="first-sidenav-open">
+    <router-outlet></router-outlet>
+  </div>
+</md-sidenav-container>
