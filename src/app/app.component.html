@@ -15,7 +15,7 @@
     <md-toolbar class="md-theme-indigo">
       <h1 class="md-toolbar-tools">Console</h1>
     </md-toolbar>
-    <div md-content layout-padding ng-controller="LeftCtrl">
+    <div md-content layout-padding ng-controller="LeftCtrl" class="first-sidenav-content">
       <button md-button routerLink="/home" routerLinkActive="active" class="md-primary" hide-gt-md>
           Home
       </button><br/>
@@ -27,6 +27,12 @@
       </button><br/>
       <button md-button routerLink="/input" routerLinkActive="active" class="md-primary" hide-gt-md (click)="sidenav.toggle()">
           Input
+      </button><br/>
+      <button md-button routerLink="/responsive-layout-directions" routerLinkActive="active" class="md-primary" hide-gt-md (click)="sidenav.toggle()">
+          Responsive Layout Directions
+      </button><br/>
+      <button md-button routerLink="/tabs" routerLinkActive="active" class="md-primary" hide-gt-md (click)="sidenav.toggle()">
+          Tabs
       </button><br/>
       <button md-button routerLink="/about" routerLinkActive="active" class="md-primary" hide-gt-md (click)="sidenav.toggle()">
           About
